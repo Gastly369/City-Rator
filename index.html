@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Rator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="user-profile" onclick="openUserProfile()">
+            <img src="path/to/user-icon.jpg" alt="User Profile" class="profile-pic"/>
+            <div class="user-info">
+                <h2>City Rator</h2>
+            </div>
+        </div>
+        <div class="chat-bubble" id="chatIcon">💬</div> <!-- Updated for chat functionality -->
+    </header>
+    <main class="container">
+        <section class="welcome-section">
+            <h1>Welcome to City Rator</h1>
+            <p>Your guide to finding the perfect city to call home or visit.</p>
+        </section>
+        <section class="search-section">
+            <input type="text" id="citySearch" placeholder="Enter a city name..." autofocus>
+            <button onclick="searchCity()">Search</button>
+        </section>
+        <section id="cityInfo"></section> <!-- For displaying city info including weather -->
+        <section id="aiAssistant">
+            <p>Ask me anything about your dream city!</p>
+            <input type="text" id="userInput" placeholder="Type your question...">
+        </section>
+    </main>
+    <!-- User Profile Modal -->
+    <div id="userProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUserProfile()">&times;</span>
+            <h2>User Profile</h2>
+            <p>Connect your Ethereum wallet to interact with City Rator:</p>
+            <button id="connectWallet">Connect Wallet</button>
+        </div>
+    </div>
+  
+    <!-- Chat Interface Modal -->
+    <div id="chatModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeChat()">×</span>
+            <h2>Chat</h2>
+            <div id="messagesContainer" style="height: 300px; overflow-y: scroll;"></div>
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Make sure to include the Socket.io client script for chat functionality -->
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+  </html>
