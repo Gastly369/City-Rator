@@ -1,0 +1,157 @@
+Base and layout styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid gold;
+    margin-right: 15px;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* Input and button styles */
+input[type="text"], button {
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type="text"] {
+    border: 2px solid #E6E6E6;
+    background-color: #FAFAFA;
+}
+
+button {
+    background-color: gold;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, button:focus {
+    background-color: #B78A40;
+    transform: translateY(-2px);
+}
+
+/* Chat Bubble Icon Enhancement */
+.chat-bubble {
+    background-color: gold;
+    color: white;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer; /* Make it clickable */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: fixed; /* Positioned at a fixed spot */
+    right: 20px; /* Distance from the right */
+    bottom: 20px; /* Distance from the bottom */
+}
+
+.chat-bubble:hover {
+    background-color: #B78A40; /* Darker gold on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 2px solid gold; /* Gold border for emphasis */
+    border-radius: 5px; /* Rounded corners */
+    width: 60%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#messagesContainer {
+    border: 2px solid gold; /* Gold border for message container */
+    margin-top: 20px;
+    padding: 10px;
+    height: 300px; /* Fixed height with overflow control */
+    overflow-y: auto; /* Enable vertical scroll */
+    background-color: #fff; /* White background for messages */
+}
+
+/* Adjusts the close button styling within the chat and user profile modals */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for city information display */
+#cityInfo {
+    border: 2px solid gold; /* Gold border to match theme */
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
